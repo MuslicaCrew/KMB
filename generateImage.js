@@ -11,8 +11,8 @@ const dim = {
 
 const av = {
     size: 256,
-    x: 568,
-    y: 190,
+    x: 550,
+    y: 156,
 }
 
 const generateImage = async (member) => {
@@ -35,7 +35,7 @@ const generateImage = async (member) => {
     ctx.save()
     
     ctx.beginPath()
-    ctx.arc(av.x+av.size/2, av.y+av.size/2, av.size/2, 0, Math.PI*2, true)
+    ctx.arc(dim.width/2, dim.height/2-50, av.size/2, 0, Math.PI*2, true)
     ctx.closePath
     ctx.clip()
 
@@ -47,15 +47,15 @@ const generateImage = async (member) => {
     ctx.textAlign = "center"
 
     //draw in welcome
-    ctx.font = "50px RandyGG"
+    ctx.font = "60px RandyGG"
     ctx.fillText("Welcome", dim.width/2, dim.margin+70)
 
     //draw in username
-    ctx.font = "60px RandyGG"
-    ctx.fillText(username+discrim, dim.width/2, dim.height-dim.margin-115)
+    ctx.font = "75px RandyGG"
+    ctx.fillText(username+discrim, dim.width/2, dim.height-dim.margin-125)
 
     //draw in to the server
-    ctx.font = "40px RandyGG"
+    ctx.font = "55px RandyGG"
     ctx.fillText("to the server", dim.width/2, dim.height-dim.margin-50)
 
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), "welcome.png")
