@@ -23,7 +23,7 @@ const generateImage = async (member) => {
     const canvas = Canvas.createCanvas(dim.width, dim.height)
     const ctx = canvas.getContext("2d")
 
-    //drwa in the background
+    //draw in the background
     const backimg = await Canvas.loadImage(background)
     ctx.drawImage(backimg, 0, 0)
 

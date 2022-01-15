@@ -4,12 +4,18 @@ module.exports = {
     name: "messageCreate",
     run: async function runALL(bot, message){
         const {client, prefix, owners} = bot
+        const doge  = "https://i.imgur.com/Joh2nlV.jpg"
 
         if (!message.guild) return
         if (message.author.bot) return
+        if (message.content.includes("nci")){
+            message.reply("Bro ez cringe volt https://i.imgur.com/Joh2nlV.jpg")          
+        }
+        if (message.author.id == 311871697722671106){
+            message.reply("Na most hol az istened?")
+        }
         if (!message.content.startsWith(prefix)) return
-        if (message.content.includes("unci"))
-            message.reply("Buzi vagy")
+        
 
         const args = message.content.slice(prefix.length).trim().split(/ +/g)
         const cmdstr = args.shift().toLowerCase()
